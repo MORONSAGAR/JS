@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Magnifier</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+        .image-container {
+            position: relative;
+            overflow: hidden;
+        }
+        .magnified-image {
+            transition: transform 0.4s; /* Smooth transition for magnification */
+        }
+        .image-container:hover .magnified-image {
+            transform: scale(2); /* Magnify the image */
+        }
+        img {
+            max-width: 300px; /* Set base size of the image */
+            border-radius: 8px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="image-container">
+    <img src="download.jpeg" alt="Sample Image" class="magnified-image">
+</div>
+
+</body>
+</html>

@@ -1,0 +1,38 @@
+<html>
+    <head>
+        <title>Login</title>
+    </head>
+    <body>
+        <h2>Login</h2>
+        <form id="loginform">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username"><br><br>
+            <label for="password">password</label>
+            <input type="password" id="password" name="password"><br><br>
+            <button type="button" onclick="login()">Login</button>
+        </form>
+
+        <p id="message"></p>
+
+        <script>
+            function login(){
+                const correctUsername ="Admin";
+                const correctPassword ="Admin@123";
+
+                const username=document.getElementById("username").value;
+                const password=document.getElementById("password").value;
+                const message=document.getElementById("message");
+
+                if(username === correctUsername){
+                    if (password === correctPassword){
+                        message.textContent="Login success";
+                    }else{
+                        message.textContent="Incorrect username or password";
+                    }
+                }else{
+                    message.textContent="Incorrect usernmae or password";
+                }
+            }
+        </script>
+    </body>
+</html>

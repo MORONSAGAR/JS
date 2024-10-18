@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Instagram Login</title>
+    <link rel="stylesheet" href="insta.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Instagram Login</h2>
+        <form id="loginForm">
+            <div>
+                <label for="loginMethod">Login with:</label>
+                <select id="loginMethod">
+                    <option value="">--Select--</option>
+                    <option value="email">Email</option>
+                    <option value="username">Username</option>
+                    <option value="mobile">Mobile Number</option>
+                </select>
+            </div>
+            <div>
+                <label for="username">Username:</label>
+                <input type="text" id="username" placeholder="Enter your username">
+            </div>
+            <div>
+                <label for="email">Email:</label>
+                <input type="email" id="email" placeholder="Enter your email">
+            </div>
+            <div>
+                <label for="mobile">Mobile Number:</label>
+                <input type="text" id="mobile" placeholder="Enter your mobile number">
+            </div>
+            <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" placeholder="Enter your password" required>
+            </div>
+            <button type="submit">Login</button>
+            <p id="errorMessage" class="error"></p>
+        </form>
+    </div>
+    <script src="insta.js"></script>
+</body>
+</html>

@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reset Password</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            padding: 20px;
+        }
+        .form-container {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .error {
+            color: red;
+            display: none; /* Hidden by default */
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>Reset Password</h2>
+    <form id="resetPasswordForm">
+        <label for="newPassword">New Password:</label><br>
+        <input type="password" id="newPassword" oncopy="return false;" onpaste="return false;"><br>
+        <div id="copyError" class="error">Copy is restricted</div>
+        
+        <label for="confirmPassword">Confirm Password:</label><br>
+        <input type="password" id="confirmPassword" oncopy="return false;" onpaste="return false;"><br>
+        <div id="pasteError" class="error">Paste is restricted</div>
+        
+        <br>
+        <button type="submit">Reset Password</button>
+    </form>
+</div>
+
+<script>
+    // Disable right-click option
+    document.addEventListener('contextmenu', function(e) {
+        e.preventDefault();
+    });
+
+    // Adding event listeners to manage copy and paste restrictions
+    document.getElementById('newPassword').addEventListener('copy', function() {
+        document.getElementById('copyError').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('copyError').style.display = 'none';
+        }, 2000); // Hide error message after 2 seconds
+    });
+
+    document.getElementById('confirmPassword').addEventListener('paste', function() {
+        document.getElementById('pasteError').style.display = 'block';
+        setTimeout(() => {
+            document.getElementById('pasteError').style.display = 'none';
+        }, 2000); // Hide error message after 2 seconds
+    });
+</script>
+
+</body>
+</html>
